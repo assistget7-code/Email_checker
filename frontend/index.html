@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login System</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <style>
+        .toast {
+            display: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+        .toast.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        .toast.success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold mb-6 text-center">Sign in</h2>
+        
+        <form id="loginForm">
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" id="email" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-1">Password</label>
+                <input type="password" id="password" required
+                       class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div id="toast" class="toast"></div>
+            
+            <button type="submit" id="loginBtn"
+                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition disabled:opacity-50">
+                Sign in
+            </button>
+        </form>
+        
+        <div class="mt-4 text-center text-sm text-gray-600">
+            <a href="#" class="hover:underline">Forgot password?</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="hover:underline" onclick="showRegister()">Create account</a>
+        </div>
+    </div>
+
+    <script src="JS/config.js"></script>
+    <script src="JS/email.js"></script>
+</body>
+</html>
